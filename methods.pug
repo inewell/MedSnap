@@ -1,0 +1,54 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title MedSnap Methods
+        link(rel='stylesheet', type='text/css', href='styles.css')
+    include includes/header.pug
+    body
+        #container
+            #pic-div
+                img#bg-pic(src='doctor-pic.jpg', alt='doctor')
+                script(src='bg-pic-resize.js')
+            #main-content-container
+                #description
+                    script(type='text/javascript', async='', src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML-full')
+                    
+                    h2(style="color:royalblue;") Convolutional Neural Networks
+                    img#cnn-img(src='cnn_architecture.jpg' alt='CNN' width="900px" style="border: 5px solid royalblue;")
+                    p The backbone of MedSnap's service relies upon the usage of convolutional neural networks (CNNs), a powerful image classification tool. CNNs are the industry standard for all sorts of tasks. The primary strength of CNNs is their ability to extract high and low level features from images, making them ideal for a wide array of applications including digit recognition, handwriting recognition, facial recognition, and medical uses. Our service is an ideal pairing of medicine and computation, providing people an accessible way to use CNNs to assess images of their symptoms, and routing them to proper medical professionals.
+                    
+                    h2 How do Convolutional Neural Networks Work?
+                    p CNNs are made up of several layers of different types, each serving a different purpose. Ultimately, it takes an input image, of some width W, height H, and depth C (usually 3 color channels; R, G, B), and outputs a vector of class probabilities. By training it on a prelabeled dataset of images, it learns a mapping with near-optimal accuracy from images to the dataset classes. So what are the layer types that do this?
+                    ul
+                        li 
+                            h4 Convolutional Layer
+                            p The convolutional layer is the core building block of a CNN. The layer's parameters consist of a set of learnable filters (or kernels), which have a small receptive field, but extend through the full depth of the input volume. During the forward pass, each filter is convolved across the width and height of the input volume, computing the dot product between the entries of the filter and the input and producing a 2-dimensional activation map of that filter. As a result, the network learns filters that activate when it detects some specific type of feature at some spatial position in the input.
+                            p Stacking the activation maps for all filters along the depth dimension forms the full output volume of the convolution layer. Every entry in the output volume can thus also be interpreted as an output of a neuron that looks at a small region in the input and shares parameters with neurons in the same activation map.
+                        li
+                            h4 Pooling layer
+                            p Another important concept of CNNs is pooling, which is a form of non-linear down-sampling. There are several non-linear functions to implement pooling among which max pooling is the most common. It partitions the input image into a set of non-overlapping rectangles and, for each such sub-region, outputs the maximum. The intuition is that the exact location of a feature is less important than its rough location relative to other features. The pooling layer serves to progressively reduce the spatial size of the representation, to reduce the number of parameters and amount of computation in the network, and hence to also control overfitting. It is common to periodically insert a pooling layer between successive convolutional layers in a CNN architecture. The pooling operation provides another form of translation invariance.
+
+                            p The pooling layer operates independently on every depth slice of the input and resizes it spatially. The most common form is a pooling layer with filters of size 2x2 applied with a stride of 2 downsamples at every depth slice in the input by 2 along both width and height, discarding 75% of the activations. In this case, every max operation is over 4 numbers. The depth dimension remains unchanged.
+
+                            p In addition to max pooling, the pooling units can use other functions, such as average pooling or L2-norm pooling. Average pooling was often used historically but has recently fallen out of favor compared to max pooling, which works better in practice.
+                        li
+                            h4 ReLU layer
+                            p ReLU is the abbreviation of Rectified Linear Units. This layer applies the non-saturating activation function \(f(x)=\max(0,x)\). It increases the nonlinear properties of the decision function and of the overall network without affecting the receptive fields of the convolution layer.
+
+                            p Other functions are also used to increase nonlinearity, for example the saturating hyperbolic tangent \(f(x)=\tanh(x)\), and the sigmoid function \(f(x)=(1+e^-x)^-1\). ReLU is preferable to other functions, because it trains the neural network several times faster without a significant penalty to generalisation accuracy.
+                            
+                        li
+                            h4 Fully connected layer
+                            p Finally, after several convolutional and max pooling layers, the high-level reasoning in the neural network is done via fully connected layers. Neurons in a fully connected layer have connections to all activations in the previous layer, as seen in regular neural networks. Their activations can hence be computed with a matrix multiplication followed by a bias offset.
+                            
+                        li
+                            h4 Loss layer
+                            p The loss layer specifies how training penalizes the deviation between the predicted and true labels and is normally the final layer. Various loss functions appropriate for different tasks may be used there. Softmax loss is used for predicting a single class of K mutually exclusive classes. Sigmoid cross-entropy loss is used for predicting K independent probability values in \([0,1]\). Euclidean loss is used for regressing to real-valued labels \((-\infty ,\infty)\).
+                    h2 So what is our model?
+                    p Our model uses a CNN with the following structure:
+                    p [conv-relu-bn-pool]*4 --> fc*2
+                    p This means we have a cycle of convolutional layer, reLU layer, batchNorm layer, and pool layer repeated four times, followed by 2 fully connected layers. This has been shown to be a successful structure and it has performed well on our datasets.
+                    footer(style="height:80px;margin-bottom:20px;padding-top:20px;padding-left:20px;color:#888888;")
+                        cite CNN layer descriptions from 
+                            a(href="https://en.wikipedia.org/wiki/Convolutional_neural_network") Wikipedia

@@ -1,0 +1,36 @@
+header
+    h1#main-h1
+        a#homepage(href='./')
+            span(style='color:lightgray;') Med
+            span(style='color:royalblue;') Snap
+    nav#page-options
+        a#about-ML(href='./methods') ML Methods
+        a#about-app(href='./app') Mobile App
+        a#about-uses(href='./uses') Uses
+        a#about-articles(href='./articles') Articles
+    button#login LOGIN
+div#specificOps
+    
+#login-menu
+    button#login-menu-xout X
+    h3 I AM A:
+    .login-option-div#patient-login
+        | Patient
+    .login-option-div#doctor-login
+        | Medical Professional
+
+#login-window
+    button#login-window-xout X
+    h2 LOGIN
+    div.login-input
+        label Username: 
+        br
+        input(type="text" name="usn" class="login-input-field" id="usn-input")
+    div.login-input
+        label Password:
+        br
+        input(type="password" name="pwd" class="login-input-field" id="pwd-input")
+    div.login-input
+        button(type="button" id="login-submit") Submit
+script(src="header.js")
+    

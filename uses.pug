@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title MedSnap Uses
+        link(rel='stylesheet', type='text/css', href='styles.css')
+    include includes/header.pug
+    body
+        #container
+            #pic-div
+                img#bg-pic(src='doctor-pic.jpg', alt='doctor')
+                script(src='bg-pic-resize.js')
+            #main-content-container
+                #description
+                    h1(style="color:royalblue;") MedSnap has classifiers for several different categories of ailments. They are:
+                    ul
+                        li Skin moles: are they cancerous?
+                        li Burns: what degree are they?
+                        li Bug bites: what kind of insect is responsible?

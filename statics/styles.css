@@ -1,0 +1,180 @@
+header {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 80px;
+    background-color: #8c1515;
+    z-index: 1;
+    padding-left: 20px;
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 0px;
+    top: 80px;
+    width: 100%;
+}
+#main-h1 {
+    float: left;
+}
+a#homepage {
+    text-decoration: none;
+}
+nav {
+    float: left;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+button:focus {
+    outline: 0;
+}
+nav a {
+    background: none;
+    color: lightgray;
+    border: none;
+    border-left: 1px solid lightgray;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-decoration: none;
+}
+nav a:first-child {
+    border-left: none;
+}
+nav a:hover {
+    cursor: pointer;
+    color: royalblue;
+}
+body {
+    background-color: lightgray;
+}
+#login-menu-xout, #login-window-xout {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: none;
+    border: none;
+    color: white;
+}
+#specificOps {
+    top: 80px;
+    left: 0px;
+    position: fixed;
+    width: 100%;
+    height: 20px;
+    background-color: royalblue;
+    color: #8c1515;
+    opacity: 0.9;
+    z-index: 3;
+    visibility: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#login-menu-xout:hover, #login-window-xout:hover {
+    cursor: pointer;
+    color: lightgray;
+}
+#bg-pic {
+    opacity:0.3;
+}
+#specificOps a {
+    margin-right: 10px;
+    margin-left: 10px;
+    color: #8c1515;
+}
+#login {
+    float: right;
+    border: none;
+    color: lightgray;
+    background: none;
+    margin-right: 35px;
+    margin-top: 30px;
+}
+#login:hover {
+    color: royalblue;
+    cursor: pointer;
+}
+#login-menu {
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 80px;
+    width: 200px;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+    padding: 5px;
+    z-index: 4;
+}
+.login-option-div {
+    color: white;
+    border-top: 1px solid white;
+    padding: 5px;
+    height: 25px;
+}
+.login-option-div:hover {
+    background-color: darkgray;
+    cursor: pointer;
+}
+.login-option-div:last-child {
+    border-bottom: 1px solid white;
+}
+#login-menu h3 {    
+    color: white;
+}
+#pic-div {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+}
+#main-content-container {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#main-content-container div {
+    width: 900px;
+    font-size: 14pt;
+}
+#slogan-div {
+    text-align: center;
+    width: 600px;
+    border: 3px solid #8c1515;
+    color: royalblue;
+    margin-top: 150px;
+}
+#login-window {
+    padding: 12px;
+    position: fixed;
+    top: 100px;
+    left: 300px;
+    width: 350px;
+    height: 400px;
+    background-color: #444444;
+    opacity: 0.98;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: lightgray;
+    border: 2px solid royalblue;
+    visibility: hidden;
+}
+div.login-input {
+    padding: 3px;
+    width: 310px;
+    height: 60px;
+    border-top: 1px solid lightgray;
+}
+div.login-input:last-child {
+    border-bottom: 1px solid lightgray;
+}

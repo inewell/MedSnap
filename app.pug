@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title MedSnap App
+        link(rel='stylesheet', type='text/css', href='styles.css')
+    include includes/header.pug
+    body
+        #container
+            #pic-div
+                img#bg-pic(src='doctor-pic.jpg', alt='doctor')
+                script(src='bg-pic-resize.js')
+            #main-content-container
+                #description
+                    h1(style="color:royalblue;") Go to the App Store and download our app.
+                    h3 About our app
+                    p Our app has three seperate screens, each serving a different purpose as a part of the dynamic user interface. They are:
+                    ul
+                        li 
+                            h4 Camera
+                            p Users use this screen to take pictures of their affected site. This then redirects you to a menu to select the classifier you want.
+                        li 
+                            h4 Suggested articles
+                            p Users use this screen to inform themselves with scores of relevant articles from reputable and helpful sources. This can help them have a better idea about what their condition they may have, what kind of help to seek, and what kind of action might be needed.
+                        li 
+                            h4 Contacting medical centers
+                            p If you need emergency aid, you can quickly send pictures of your condition, tagged with your location, to a medical center which will rapidly send you the help you need.

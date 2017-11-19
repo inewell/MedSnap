@@ -1,0 +1,17 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title MedSnap Homepage
+        link(rel='stylesheet', type='text/css', href='styles.css')
+    include includes/header.pug
+    body
+        #container
+            #pic-div
+                img#bg-pic(src='doctor-pic.jpg', alt='doctor')
+                script(src='bg-pic-resize.js')
+                    
+            #main-content-container
+                #slogan-div(style='width:600px')
+                    h1#slogan1 Connecting Patients to Professionals
+                    h2#slogan2 Making Machine Learning and Medical Help Accessible and Useful for Everyone

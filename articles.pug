@@ -1,0 +1,33 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title MedSnap Articles
+        link(rel='stylesheet', type='text/css', href='styles.css')
+    include includes/header.pug
+    body
+        #container
+            #pic-div
+                img#bg-pic(src='doctor-pic.jpg', alt='doctor')
+                script(src='bg-pic-resize.js')
+            #main-content-container
+                #description
+                    h2(style="color:royalblue;") Computer vision as a medical diagnostic tool is rapidly expanding in use.
+                    p The following are some relevant articles on the topic, similar to what MedSnap does.
+                    ul
+                        li
+                            h4 Source: NIH; Application: Malaria
+                            a(href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3215371/") Computer vision for microscopy diagnosis of malaria - NCBI - NIH
+                        li
+                            h4 Source: IBM; Application: Skin Cancer
+                            a(href="https://www.ibm.com/blogs/research/2016/11/identifying-skin-cancer-computer-vision/") Identifying skin cancer with computer vision - IBM Blog Research
+                        
+                        li
+                            h4 Source: Institute of Electrical and Electronics Engineers; Application: Skin Cancer
+                            a(href="http://ieeexplore.ieee.org/document/4801738/?reload=true") Overview of Advanced Computer Vision Systems for Skin Lesions Characterization
+                        li
+                            h4 Source: Nature; Application: Skin Cancer
+                            a(href="http://www.nature.com/nature/journal/v542/n7639/abs/nature21056.html") Dermatologist-level classification of skin cancer with deep neural networks
+                        li
+                            h4 Source: Indian Journal of Science and Technology; Application: Burns
+                            a(href="http://www.indjst.org/index.php/indjst/article/viewFile/106772/75973") The Degree of Skin Burns Images Recognition using Convolutional Neural Network
