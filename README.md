@@ -14,6 +14,7 @@ The point of this project was really just to learn more about convolutional neur
 Work on the MedSnap project not included in this repository:
 * Herbert Turner trained the CNN models
 * Varun Roy worked on our mobile app
+
 I also received help from staff at the HackNEHS competition, especially:
 * Jeffrey Shen
 * Dr. Zufelt
